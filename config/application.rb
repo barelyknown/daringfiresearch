@@ -34,6 +34,8 @@ module Daringfiresearch
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'UTC'
+    config.active_record.default_timezone = 'UTC'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
@@ -53,6 +55,9 @@ module Daringfiresearch
     # like if you have constraints or database-specific column types
     # config.active_record.schema_format = :sql
 
+    # Enable logger to work with unicorn
+    config.logger = Logger.new(STDOUT)
+
     # Enforce whitelist mode for mass assignment.
     # This will create an empty whitelist of attributes available for mass-assignment for all models
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
@@ -61,8 +66,16 @@ module Daringfiresearch
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.test_framework :mini_test, :spec => true, :fixture => true
+    end
+
+
+
   end
 end

@@ -1,0 +1,2 @@
+class PostSourcesController < ApplicationController
+end

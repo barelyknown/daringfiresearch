@@ -1,4 +1,16 @@
 Daringfiresearch::Application.routes.draw do
+  resources :search_links
+
+  resources :searches
+
+  resources :post_sources
+
+  resources :posts
+
+  resources :sources
+
+  resources :links
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
