@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022034638) do
+ActiveRecord::Schema.define(:version => 20121022042338) do
 
   create_table "links", :force => true do |t|
     t.text     "url"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20121022034638) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "searches", ["query"], :name => "index_searches_on_query"
 
   create_table "sources", :force => true do |t|
     t.string   "url"

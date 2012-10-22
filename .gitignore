@@ -10,6 +10,8 @@
 /log/*.log
 /tmp
 
+*.dat
+
 # https://github.com/github/gitignore/blob/master/Ruby.gitignore
 *.gem
 *.rbc
