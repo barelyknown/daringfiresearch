@@ -1,7 +1,7 @@
 <%= cache @search.query, expires_in: 1.day do %>
   <%= render partial: 'searches/search', locals: { search: @search } %>
   <dl>
-    <% @search.links.each do |link| %>
+    <% @search.links.includes(:source).each do |link| %>
       <%= cache link do %>
         <dt>
           <%= link_to(link.title.try(:html_safe), link.url) %>

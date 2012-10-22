@@ -13,7 +13,7 @@ class Search < ActiveRecord::Base
   end
   
   def self.find_by_param(param)
-    where(query: CGI.unescape(param))
+    where(query: CGI.unescape(param.strip.downcase))
   end
   
   def blekko
