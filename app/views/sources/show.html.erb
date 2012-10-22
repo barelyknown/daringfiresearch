@@ -1,0 +1,6 @@
+<h2 class="tk-prenton-ultra-condensed"><%= link_to @source.url, @source.url %></h2>
+<ul>
+<% @posts.each do |post| %>
+  <li><%= link_to post.title, post.url %> (<%= post.published_on %>)</li>
+<% end %>
+</ul>

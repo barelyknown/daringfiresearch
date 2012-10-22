@@ -10,6 +10,10 @@ gem 'simple_form'
 gem 'canable'
 gem 'bluecloth'
 gem 'blekko-search'
+gem 'turbolinks'
+gem 'figaro'
+gem 'nokogiri'
+gem 'will_paginate'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

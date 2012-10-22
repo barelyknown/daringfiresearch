@@ -1,4 +1,7 @@
 Daringfiresearch::Application.routes.draw do
+  root to: 'searches#new'
+
+
   resources :search_links
 
   resources :searches

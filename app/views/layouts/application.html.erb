@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Daringfiresearch</title>
+  <script type="text/javascript" src="//use.typekit.net/eco8cet.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <title>Daring Firesearch</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <div class="span3 header">
+        <%= link_to root_path do %>
+          <h1 class="tk-prenton-ultra-condensed">
+            <%= image_tag("daring_firesearch_logo.png", class: "logo-main") %>DARING FIRESEARCH
+          </h1>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset1 span2 sidebar">
+        <%= render partial: 'shared/sidebar' %>
+      </div>
+      <div class="offset1 span8 body">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

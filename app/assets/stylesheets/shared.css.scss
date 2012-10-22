@@ -1,0 +1,133 @@
+body {
+  color: #4a525a;
+  background-color: #dddddd;
+  font-family: Verdana, 'Bitstream Vera Sans', sans-serif;
+  font-size: 11px;
+  padding-bottom: 50px;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #4a525a;
+}
+
+.logo-main {
+  margin-bottom: 8px;
+  margin-right: 4px;
+}
+
+h2 {
+  margin-top: -6px;
+}
+
+a:link {
+	text-decoration: none;
+	color: #4a525a;
+	border-color: #888;
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+	padding: 3px 0px 2px 0px;
+	background-color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	background-color: #606870;
+	border-color: #606870;
+  color: #dddddd;
+}
+
+a em {
+  padding-bottom: 2px; /* Hack for WebKit; otherwise the underscore padding is 0 */
+}
+
+p {
+ 	margin: 0 0 1.6em 0;
+	padding: 0;
+}
+
+dl {
+  margin-top: 0px;
+}
+
+dt {
+	font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+	font-size: 1em;
+	text-align: left;
+	font-weight: normal;
+	margin: 0 0 .4em 0;
+	letter-spacing: normal;
+	text-transform: none;
+	}
+dd {
+	margin: auto auto 2em 0px;
+	}
+
+dd p {
+	margin: 0 0 1em 0;
+}
+  
+.sidebar {
+	border: 0px dotted gray;
+	padding: 5px 0 0 0;
+	background-color: transparent;
+	color: #4a525a;
+	text-align: right;
+	line-height: 1em;
+	font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Verdana, "Bitstream Vera Sans", sans-serif;
+  ul {
+  	margin: 0 0 5em -4em;
+  }
+  li {
+  	list-style: none;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	margin: 0 0 1em 0;
+  	padding: 0;
+	}
+  p {
+  	padding: 0;
+  	letter-spacing: 2px;
+  	margin: 0 0 5em -3em;
+	}
+  
+  .about {
+    line-height: 120%;
+  }
+  
+  h2 {
+  	font-size: 1em;
+  	font-weight: normal;
+  	margin-bottom: .25em;
+  	margin-top: 2em;
+  	text-transform: uppercase;
+  	letter-spacing: 2px;
+	}
+  strong {
+  	font-size: 1em;
+  	font-weight: normal;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+	}
+  a {
+  	color: #4a525a;
+  	padding: 4px 1px 4px 1px;
+  	text-decoration: none;
+	}
+  a:link {
+  	color: #4a525a;
+  	border: 0;
+	}
+  a:visited {
+  	color: #4a525a;
+  	border: 0;
+	}
+  a:hover {
+  	color: #dddddd;
+	}
+
+}

@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021142821) do
+ActiveRecord::Schema.define(:version => 20121022005120) do
 
   create_table "links", :force => true do |t|
-    t.string   "url"
-    t.string   "title"
+    t.text     "url"
+    t.text     "title"
     t.text     "summary"
     t.integer  "source_id"
     t.text     "display_url"
@@ -32,11 +32,14 @@ ActiveRecord::Schema.define(:version => 20121021142821) do
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "url"
+    t.text     "url"
     t.date     "published_on"
-    t.string   "title"
+    t.text     "title"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.text     "content"
+    t.text     "link_title"
+    t.text     "link_url"
   end
 
   create_table "search_links", :force => true do |t|
@@ -54,8 +57,9 @@ ActiveRecord::Schema.define(:version => 20121021142821) do
 
   create_table "sources", :force => true do |t|
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "posts_count"
   end
 
 end

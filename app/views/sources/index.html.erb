@@ -1,0 +1,7 @@
+<h2 class="tk-prenton-ultra-condensed">Daring Fireball Linked List Sources</h2>
+<ul>
+<% @sources.each do |source| %>
+<li><%= link_to source.url, source.url %> <%= link_to "#{source.posts_count} links", source %></li>
+<% end %>
+</ul>
+<%= will_paginate @sources %>

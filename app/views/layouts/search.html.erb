@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="//use.typekit.net/eco8cet.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <title>Daring Firesearch</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span12 new_search">
+        <h1 class="tk-prenton-ultra-condensed">
+          <%= image_tag("daring_firesearch_logo.png", class: "logo-main") %>DARING FIRESEARCH
+        </h1>
+        <%= yield %>
+        <p>
+          Example Searches: 
+          <%= link_to "iPad Mini Rumors", "/searches/#{CGI.escape("iPad Mini Rumors")}" %>
+          <%= link_to "Claim Chowder", "/searches/#{CGI.escape("\"Claim Chowder\"")}" %>
+          <%= link_to "Bronx Bombers", "/searches/#{CGI.escape("\"Bronx Bombers\"")}" %>
+        </p>
+        <p>You can also browse the complete list of <%= link_to("#{number_with_delimiter(Source.count)} sources.", sources_path)%></p>
+        <h2 class="tk-prenton-ultra-condensed">About DARING FIRESEARCH</h2>
+        <p>Search every site that John Gruber has linked to at least twice in the <a href="http://daringfireball.net">Daring Fireball</a> Linked List.</p>
+        <p>By Sean Devine (<a href="http://www.twitter.com/barelyknown">@barelyknown</a>)</p>
+        <p>Search powered by <%= link_to "blekko", "http://blekko.com" %> and the <%= link_to "blekko-search", "https://github.com/barelyknown/blekko-search" %> ruby gem.</p>
+        <p>This is just a tribute.</p>
+      </div>
+  </div>
+</body>
+</html>

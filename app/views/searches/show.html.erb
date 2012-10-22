@@ -1,0 +1,25 @@
+<%= render partial: 'searches/search', locals: { search: @search } %>
+<dl>
+  <% @search.links.each do |link| %>
+    <%= cache link do %>
+      <dt>
+        <%= link_to(link.title.try(:html_safe), link.url) %>
+        <% if link.published_at %>
+        <br />
+          <%= link.published_at.strftime("%B %-d %Y") %>
+        <% end %>    
+      </dt>
+      <dd>
+        <div>
+          <%= link.summary.try(:html_safe) %>
+        </div>
+        <% if link.source %>
+          <div class="link_source">
+            Source: <%= link_to link.source.url, link.source.url %> 
+            <%= link_to "#{link.source.posts_count} links", link.source, class: "source_links_link" %> on Daring Fireball
+          </div>
+        <% end %>
+      </dd>
+    <% end %>
+  <% end %>
+</dl>
