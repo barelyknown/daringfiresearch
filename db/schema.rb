@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022005120) do
+ActiveRecord::Schema.define(:version => 20121022034638) do
 
   create_table "links", :force => true do |t|
     t.text     "url"
@@ -24,12 +24,18 @@ ActiveRecord::Schema.define(:version => 20121022005120) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "links", ["source_id"], :name => "index_links_on_source_id"
+
   create_table "post_sources", :force => true do |t|
     t.integer  "post_id"
     t.integer  "source_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "post_sources", ["post_id", "source_id"], :name => "index_post_sources_on_post_id_and_source_id"
+  add_index "post_sources", ["post_id"], :name => "index_post_sources_on_post_id"
+  add_index "post_sources", ["source_id"], :name => "index_post_sources_on_source_id"
 
   create_table "posts", :force => true do |t|
     t.text     "url"
@@ -49,6 +55,10 @@ ActiveRecord::Schema.define(:version => 20121022005120) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "search_links", ["link_id"], :name => "index_search_links_on_link_id"
+  add_index "search_links", ["search_id", "link_id"], :name => "index_search_links_on_search_id_and_link_id"
+  add_index "search_links", ["search_id"], :name => "index_search_links_on_search_id"
+
   create_table "searches", :force => true do |t|
     t.string   "query"
     t.datetime "created_at", :null => false
@@ -61,5 +71,7 @@ ActiveRecord::Schema.define(:version => 20121022005120) do
     t.datetime "updated_at",  :null => false
     t.integer  "posts_count"
   end
+
+  add_index "sources", ["posts_count"], :name => "index_sources_on_posts_count"
 
 end
