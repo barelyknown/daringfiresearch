@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'figaro'
 gem 'nokogiri'
 gem 'will_paginate'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -27,4 +28,9 @@ group :test, :development do
   gem 'minitest-rails-capybara'
   gem "mocha", :require => false
   gem "turn"
+end
+
+group :development do
+  gem 'taps', :require => false
+  gem 'sqlite3'
 end
