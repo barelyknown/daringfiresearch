@@ -17,7 +17,7 @@ class SearchesController < ApplicationController
   alias_method :update, :create
   
   def show
-    unless @search = Search.find_by_param(params[:id]).includes(:links).last
+    unless @search = Search.find_by_param(params[:id]).last
       @search = Search.create(query: CGI.unescape(params[:id]))
     end
   end
