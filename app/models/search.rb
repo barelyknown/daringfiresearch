@@ -24,6 +24,10 @@ class Search < ActiveRecord::Base
     self[:query] = value.strip.downcase if value
   end
   
+  def standardize_query(raw_query)
+    standardized_query = raw_query.strip.downcase
+  end
+  
   def existing_search
     @existing_search ||= 
       Search.find_by_param(query).where("id != ?", self.id).where("created_at > ?", Time.now - 1.day).first
@@ -36,9 +40,11 @@ class Search < ActiveRecord::Base
       end
     else
       results = Blekko.my_account.search(query, slashtags: [Source::SLASHTAG, "/date"])
+      sequence = 1
       results.each do |result|
         link = Link.new_or_create_from_blekko_result(result)
-        SearchLink.create(link_id: link.id, search_id: self.id)
+        SearchLink.create(link_id: link.id, search_id: self.id, sequence: sequence)
+        sequence += 1
       end
     end
     links.all

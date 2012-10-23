@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022042338) do
+ActiveRecord::Schema.define(:version => 20121023012639) do
 
   create_table "links", :force => true do |t|
     t.text     "url"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20121022042338) do
     t.integer  "link_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "sequence"
   end
 
   add_index "search_links", ["link_id"], :name => "index_search_links_on_link_id"
