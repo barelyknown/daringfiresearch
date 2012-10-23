@@ -1,8 +1,7 @@
-<%= cache [@search.query, 1], expires_in: 1.day do %>
+<%= cache [@search.query, 3], expires_in: 1.day do %>
   <%= render partial: 'searches/search', locals: { search: @search } %>
   <dl>
     <% @search.search_links.includes(:link).order("sequence asc").each do |search_link| %>
-      <%= cache search_link do %>
         <% link = search_link.link %>
         <dt>
           <%= link_to(link.title.try(:html_safe), link.url) %>
@@ -22,7 +21,6 @@
             </div>
           <% end %>
         </dd>
-      <% end %>
     <% end %>
   </dl>
 <% end %>
