@@ -15,6 +15,7 @@ gem 'figaro'
 gem 'nokogiri'
 gem 'will_paginate'
 gem 'heroku'
+gem 'memcachier'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
