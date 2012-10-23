@@ -1,8 +1,9 @@
 <%= cache @search.query, expires_in: 1.day do %>
   <%= render partial: 'searches/search', locals: { search: @search } %>
   <dl>
-    <% @search.links.includes(:source).each do |link| %>
-      <%= cache link do %>
+    <% @search.search_links.includes(:link).order("sequence asc").each do |search_link| %>
+      <%= cache search_link do %>
+        <% link = search_link.link %>
         <dt>
           <%= link_to(link.title.try(:html_safe), link.url) %>
           <% if link.published_at %>
